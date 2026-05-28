@@ -11,10 +11,10 @@ app.use(
   })
 );
 
-app.use(express.json({ limit: "16kb" }));
-app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-app.use(express.static("public"));
-app.use(cookieParser());
+app.use(express.json({ limit: "16kb" })); // parses raw body text → req.body
+app.use(express.urlencoded({ extended: true, limit: "16kb" })); // parses form data → req.body
+app.use(express.static("public")); //serves files directly from the disk
+app.use(cookieParser()); //parses Cookie header → req.cookies
 
 //routes import
 
